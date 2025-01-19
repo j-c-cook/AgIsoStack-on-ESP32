@@ -3,16 +3,16 @@ name: MacOS Workflow
 on: [push]
 
 jobs:
-
   clone:
-    runs-on: [macOS]
+    runs-on: macOS
     steps:
       - uses: actions/checkout@v2
-      - name: git submodule update --init --recursive
+      - name: Update submodules
+        run: git submodule update --init --recursive
 
   Build:
     needs: clone
-    runs-on: [macOS]
-    steps: 
+    runs-on: macOS
+    steps:
       - name: Run the build script
         run: . ./build_osx.sh
