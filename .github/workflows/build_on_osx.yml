@@ -15,6 +15,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: List the directory
-        run: ls -la .
+        run: ls -la $GITHUB_WORKSPACE
       - name: Run the build script
         run: . ./build_osx.sh
+        working-directory: $GITHUB_WORKSPACE
