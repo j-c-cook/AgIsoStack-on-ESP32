@@ -6,7 +6,10 @@ jobs:
   clone:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} # Check out the code of the PR head
       - name: Update submodules
         run: git submodule update --init --recursive
 
