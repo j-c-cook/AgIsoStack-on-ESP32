@@ -14,5 +14,7 @@ jobs:
     needs: clone
     runs-on: macos-latest
     steps:
+      - name: List the directory
+        run: ls
       - name: Run the build script
         run: . ./build_osx.sh
