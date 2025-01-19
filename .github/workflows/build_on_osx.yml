@@ -1,24 +1,20 @@
-name: MacOS Workflow
+name: MacOS Build Workflow
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  clone:
+  build:
     runs-on: macos-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }} # Check out the code of the PR head
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Update submodules
         run: git submodule update --init --recursive
 
-  Build:
-    needs: clone
-    runs-on: macos-latest
-    steps:
-      - name: List the directory
+      - name: List files in root directory
         run: ls -la ./
+
       - name: Run the build script
-        run: . ./build_osx.sh
-        working-directory: ./
+        run: ./build_osx.sh
