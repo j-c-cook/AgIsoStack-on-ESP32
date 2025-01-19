@@ -1,0 +1,20 @@
+name: MacOS Build Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update submodules
+        run: git submodule update --init --recursive
+
+      - name: List files in root directory
+        run: ls -la ./
+
+      - name: Run the build script
+        run: ./build_osx.sh
