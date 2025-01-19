@@ -15,6 +15,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: List the directory
-        run: ls
+        run: ls -la .
       - name: Run the build script
         run: . ./build_osx.sh
