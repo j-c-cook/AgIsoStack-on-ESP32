@@ -12,6 +12,9 @@ else()
 endif()
 message(STATUS "Selected hardware interface: ${CAN_DRIVER}")
 
+# NOTE: If you would rather use a git submodule, then replace the "FetchContent" lines with the following:
+# add_subdirectory(path/to/AgIsoStack++)
+
 include(FetchContent)
 
 FetchContent_Declare(
