@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Build the OSX toolchain if it is not already.
-#
-# Ask the user where they would like for the esp-idf path to go.
-# The default is ~/esp.
+# Builds on Ubuntu and MacOS
+
+# Usage:
+# ./build.sh
+# ./build.sh ~/esp CMAKEARG1 CMAKEARG2 ...
+# . ./build.sh  # Now idf.py will be available in the terminal
 
 path_location=$1
 passed_args=("$@")
