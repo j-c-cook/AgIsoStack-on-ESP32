@@ -1,0 +1,21 @@
+menu "AgIsoStack"
+
+choice
+    prompt "Select CAN Hardware Interface"
+    default INTERFACE1
+    help
+        Select one of the string options for this example configuration.
+
+config INTERFACE1
+    bool "TWAI"
+    help
+        Two wire automotive interface.
+
+config INTERFACE2
+    bool "MCP2515"
+    help
+        Microchip stand-alone SPI CAN Controller.
+
+endchoice
+
+endmenu
