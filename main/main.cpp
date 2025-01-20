@@ -23,16 +23,14 @@ extern "C" void app_main()
     canDriver = std::make_shared<isobus::TWAIPlugin>(&g_config, &t_config, &f_config);
 
     isobus::CANHardwareInterface::set_number_of_can_channels(1);
-	isobus::CANHardwareInterface::assign_can_channel_frame_handler(0, canDriver);
+    isobus::CANHardwareInterface::assign_can_channel_frame_handler(0, canDriver);
 
-	if ((!isobus::CANHardwareInterface::start()) || (!canDriver->get_is_valid()))
-	{
-	    ESP_LOGE(tag, "Failed to start hardware interface. The CAN driver might be invalid.");
-		return;
-	} else
-	{
-	   ESP_LOGI(tag, "Successful start of hardware interface!");
-	}
+    if ((!isobus::CANHardwareInterface::start()) || (!canDriver->get_is_valid())) {
+        ESP_LOGE(tag, "Failed to start hardware interface. The CAN driver might be invalid.");
+        return;
+    } else {
+        ESP_LOGI(tag, "Successful start of hardware interface!");
+    }
 
-	// See https://github.com/Open-Agriculture/AgIsoStack-plus-plus/tree/main/examples and adapt as you see fit.
+    // See https://github.com/Open-Agriculture/AgIsoStack-plus-plus/tree/main/examples and adapt as you see fit.
 }
