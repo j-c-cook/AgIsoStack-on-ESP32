@@ -4,7 +4,7 @@ Incorporate the [AgIsoStack++](https://github.com/Open-Agriculture/AgIsoStack-pl
 
 ## How it works
 
-The `iso-on-esp` module is marked as a required component in `main`s [CMakeLists.txt](./main/CMakeLists.txt).
+The `agisostack` module is marked as a required component in `main`s [CMakeLists.txt](./main/CMakeLists.txt).
 
 ## Build
 
