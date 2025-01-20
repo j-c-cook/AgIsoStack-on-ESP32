@@ -9,4 +9,4 @@ endif()
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
-project(ISO-on-ESP)
+project(AgIsoStack-on-ESP)

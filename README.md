@@ -4,7 +4,7 @@ Incorporate the [AgIsoStack++](https://github.com/Open-Agriculture/AgIsoStack-pl
 
 ## How it works
 
-The `agisostack` module is marked as a required component in `main`s [CMakeLists.txt](./main/CMakeLists.txt).
+The `agisostack` [component](components/agisostack) is marked as a required component in `main`s [CMakeLists.txt](./main/CMakeLists.txt).
 
 ## Build
 
@@ -19,7 +19,7 @@ For any further environment setup inquries, see the Espressif IDF [Getting Start
 
 ## Configuration Options
 
-TWAI or MCP2515 are supported hardware interfaces by AgIsoStack++ that may be used with an ESP32. The selected hardware types are defined in the `iso-on-esp/Kconfig` file and can be selected in the configuration menu.
+TWAI or MCP2515 are supported hardware interfaces by AgIsoStack++ that may be used with an ESP32. The selected hardware types are defined in the [agisostack/Kconfig](components/agisostack/Kconfig) file and can be selected in the configuration menu.
 
 ```
 idf.py menuconfig
@@ -29,4 +29,4 @@ idf.py menuconfig
 Component config --> AgIsoStack --> Select CAN Hardware Interface --> (x) TWAI ( ) MCP2515
 ```
 
-The default hardware interface specified in this project is TWAI. The `main/main.cpp` file currently only handles the TWAI selection.
+The default hardware interface specified in this project is TWAI. The [main/main.cpp](main/main.cpp) file currently only handles the TWAI selection.
