@@ -12,6 +12,13 @@ else()
 endif()
 message(STATUS "Selected hardware interface: ${CAN_DRIVER}")
 
-add_subdirectory(AgIsoStack-plus-plus)
+include(FetchContent)
+
+FetchContent_Declare(
+   AgIsoStack
+   GIT_REPOSITORY https://github.com/j-c-cook/AgIsoStack-plus-plus.git
+   GIT_TAG        9c95260402afe7fbb1b5000ded2f66c82d10a1bb
+)
+FetchContent_MakeAvailable(AgIsoStack)
 
 target_link_libraries(${COMPONENT_LIB} INTERFACE isobus::Isobus isobus::HardwareIntegration isobus::Utility)
