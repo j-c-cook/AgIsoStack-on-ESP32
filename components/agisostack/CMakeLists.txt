@@ -19,8 +19,8 @@ include(FetchContent)
 
 FetchContent_Declare(
    AgIsoStack
-   GIT_REPOSITORY https://github.com/j-c-cook/AgIsoStack-plus-plus.git
-   GIT_TAG        9c95260402afe7fbb1b5000ded2f66c82d10a1bb
+   GIT_REPOSITORY https://github.com/Open-Agriculture/AgIsoStack-plus-plus.git
+   GIT_TAG        main
 )
 FetchContent_MakeAvailable(AgIsoStack)
 
